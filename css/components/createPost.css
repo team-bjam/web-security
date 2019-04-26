@@ -1,0 +1,41 @@
+.createPost .grid {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-column-gap: 10px;
+}
+.createPost .userImg {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 48px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.createPost input {
+  height: 48px;
+  border: 1px solid transparent;
+  background: #F4F4F4;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.1s ease;
+}
+.createPost input:focus {
+  border-color: #2274A5;
+  background-color: #fff;
+}
+.createPost .btnMain {
+  border: 1px solid #2274A5;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 12px;
+  transition: all 0.1s ease;
+  padding: 2px 10px;
+  margin-top: 3px;
+  background-color: #2274A5;
+}
+.createPost .btnMain:hover {
+  background-color: #fff;
+  color: #2274A5;
+}
+
+/*# sourceMappingURL=createPost.css.map */

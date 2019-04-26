@@ -1,0 +1,32 @@
+{
+    "user": {
+        "name":"Baddie Winkle",
+        "department":"Web Development",
+        "coverImg":"../assets/cover.png",
+        "profileImg":"../assets/baddie.png"
+    },
+    "posts": [
+        {
+            "user":"User Name",
+            "img":"../assets/default-user.png",
+            "time":"March 17 at 10:28",
+            "post":"Post message tamari soy sauce. Läkerol salmiak choco chili. Teapigs up beat. No added sugar crunchy musli."
+        },
+        {
+            "user":"Angela Merkel",
+            "img":"../assets/default-user.png",
+            "time":"March 18 at 23:09",
+            "post":"Waffles with jam and cream."
+        }
+    ],
+    "friends": [
+        {
+            "name": "Jonathan Van Ness",
+            "profileImg":"../assets/friend-profile.png",
+            "coverImg":"../assets/friend-cover.png",
+            "department":"Web Development",
+            "friends":219,
+            "joinDate":"March 2019"
+        }
+    ]
+}

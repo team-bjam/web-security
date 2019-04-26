@@ -1,0 +1,359 @@
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+* {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0 !important;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+a {
+  margin: 0;
+  font-size: 0.9em;
+  color: #29335C !important;
+}
+
+p, div {
+  font-size: 0.9rem;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-regular {
+  font-weight: 400;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.tc-light {
+  color: #969596;
+}
+
+.tc-blue {
+  color: #2274A5;
+}
+
+.tc-blue-dark {
+  color: #29335C;
+}
+
+.nav-container {
+  width: 100vw;
+  background-color: #2274A5;
+}
+.nav-container .nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.nav-container .btnHome {
+  margin-right: auto;
+}
+.nav-container .btnHome img {
+  height: 15px;
+}
+.nav-container input {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  width: 240px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 3px 15px;
+  transition: all 0.1s ease;
+}
+.nav-container input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 300;
+}
+.nav-container input:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.nav-container input:focus::placeholder {
+  color: #000;
+}
+.nav-container .btnNav {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  margin-left: 10px;
+}
+.nav-container .btnNav .btnNavInner {
+  height: 24px;
+  width: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transition: filter 0.1s ease;
+}
+.nav-container .btnNav:hover .btnNavInner {
+  -webkit-filter: brightness(0);
+  filter: brightness(0);
+}
+
+.userCardSmall {
+  width: 100%;
+}
+.userCardSmall .background {
+  height: 90px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.userCardSmall .user {
+  height: 70px;
+  background-color: #F4F4F4;
+  display: flex;
+}
+.userCardSmall .user .userImgWrapper {
+  position: relative;
+  min-width: 70px;
+  height: 70px;
+  margin-left: 10px;
+}
+.userCardSmall .user .userImg {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #fff;
+  border-radius: 70px;
+  background-image: url("../assets/baddie.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  position: absolute;
+  top: -25px;
+}
+.userCardSmall .user .userInfo {
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.userCardSmall .user .userInfo * {
+  margin: 0;
+}
+.userCardSmall .user .userInfo p {
+  color: #969596;
+  font-size: 0.9em;
+}
+
+.peopleCard {
+  background-color: #F4F4F4;
+  padding: 10px 20px;
+}
+.peopleCard p {
+  margin: 0;
+  font-size: 0.9em;
+}
+.peopleCard .person {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.peopleCard .personImg {
+  background-image: url("../assets/default-user.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 48px;
+  width: 48px;
+  border-radius: 48px;
+}
+.peopleCard .personInfo {
+  margin-left: 10px;
+}
+.peopleCard .personInfo button {
+  border: 1px solid #F66274;
+  border-radius: 20px;
+  color: #F66274;
+  font-size: 12px;
+  transition: all 0.1s ease;
+  padding: 2px 10px;
+  margin-top: 3px;
+}
+.peopleCard .personInfo button:hover {
+  background-color: #F66274;
+  color: #fff;
+}
+
+.createPost .grid {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-column-gap: 10px;
+}
+.createPost .userImg {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 48px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.createPost input {
+  height: 48px;
+  border: 1px solid transparent;
+  background: #F4F4F4;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.1s ease;
+}
+.createPost input:focus {
+  border-color: #2274A5;
+  background-color: #fff;
+}
+.createPost .btnMain {
+  border: 1px solid #2274A5;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 12px;
+  transition: all 0.1s ease;
+  padding: 2px 10px;
+  margin-top: 3px;
+  background-color: #2274A5;
+}
+.createPost .btnMain:hover {
+  background-color: #fff;
+  color: #2274A5;
+}
+
+.singlePost {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #D8D8D8;
+}
+.singlePost p {
+  margin: 0;
+}
+.singlePost .grid {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-column-gap: 10px;
+}
+.singlePost .userImg {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 48px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.singlePost .post-top {
+  display: flex;
+  margin-bottom: 5px;
+}
+.singlePost .post-top .dot {
+  height: 4px;
+  width: 4px;
+  background: #969596;
+  border-radius: 4px;
+  margin: 10px;
+}
+.singlePost .btnPost {
+  border: none;
+}
+.singlePost .btnLike:hover svg g {
+  stroke: #F66274;
+}
+.singlePost .btnComment:hover svg g {
+  stroke: #2274A5;
+}
+
+.userInfoSide {
+  width: 100%;
+  margin-top: -120px;
+}
+.userInfoSide .user .userImgWrapper {
+  margin-left: 20px;
+}
+.userInfoSide .user .userImg {
+  width: 180px;
+  height: 180px;
+  border: 2px solid #fff;
+  border-radius: 180px;
+  background-image: url("../assets/baddie.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  top: -25px;
+}
+.userInfoSide .user .userInfo * {
+  margin: 0;
+}
+
+.userCover .background {
+  height: 190px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.side-border {
+  position: relative;
+}
+.side-border:after {
+  content: "";
+  position: absolute;
+  height: calc(100% - 60px);
+  width: 1px;
+  background: #D8D8D8;
+  top: 30px;
+  bottom: 30px;
+  left: -15px;
+}
+
+body.login .login-background {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../assets/login-background.png");
+  background-size: cover;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+}
+body.login .login-container {
+  background: #fff;
+  border-radius: 5px;
+  padding: 50px 100px 100px;
+}
+body.login .bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+body.login .bottom .icon {
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 30px;
+}
+body.login .bottom .icon.icon-find {
+  background-image: url("../assets/icon-search.png");
+}
+body.login .bottom .icon.icon-friends {
+  background-image: url("../assets/icon-friendRequests.png");
+}
+body.login .bottom .icon.icon-message {
+  background-image: url("../assets/icon-messages.png");
+}
+
+* {
+  outline: none !important;
+}
+
+.main {
+  margin-top: 30px;
+}
+
+/*# sourceMappingURL=styles.css.map */

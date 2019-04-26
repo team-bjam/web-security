@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../../sass/components/singlePost.scss","../../sass/_variables.scss"],"names":[],"mappings":"AAIA;EAGI;EACA;EACA;;AAEA;EACI;;AAIJ;EACI;EACA;EACA;;AAGJ;EACI,OArBO;EAsBP,QAtBO;EAuBP;EACA,eAxBO;EA0BP;EACA;;AAMJ;EACI;EACA;;AAEA;EACI;EACA;EACA,YCjCG;EDkCH;EACA;;AAKR;EACI;;AAMI;EACI,QCnDR;;AD2DI;EACI,QClEF","file":"singlePost.css"}

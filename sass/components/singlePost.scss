@@ -1,0 +1,71 @@
+@import '../variables';
+
+$userImgWidth: 48px;
+
+.singlePost {
+    // color: pink !important;
+
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $c-gray-medium;
+    
+    p {
+        margin: 0;
+        // font-size: 3em;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: $userImgWidth 1fr;
+        grid-column-gap: 10px;
+    }
+
+    .userImg {
+        width: $userImgWidth;
+        height: $userImgWidth;
+        border: 2px solid #fff;
+        border-radius: $userImgWidth;
+        // background-image: url('../assets/baddie.png');
+        background-size: cover;
+        background-position: 50% 50%;
+        // position: absolute;
+        // top: -25px;
+        // left: 10px;
+    }
+
+    .post-top {
+        display: flex;
+        margin-bottom: 5px;
+
+        .dot {
+            height: 4px;
+            width: 4px;
+            background: $c-text-light;
+            border-radius: 4px;
+            margin: 10px;
+        }
+        
+    }
+
+    .btnPost {
+        border: none;
+    }
+
+    .btnLike {
+        &:hover {
+            // background: greenyellow;
+            svg g {
+                stroke: $c-red;
+            }
+        }
+    }
+
+    .btnComment {
+        &:hover {
+            // background: greenyellow;
+            svg g {
+                stroke: $c-blue-main;
+            }
+        }
+    }
+}
