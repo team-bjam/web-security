@@ -48,6 +48,20 @@ p, div {
   color: #29335C;
 }
 
+/* ------------------ */
+/*        BASE        */
+/* ------------------ */
+* {
+  outline: none !important;
+}
+
+.main {
+  margin-top: 30px;
+}
+
+/* ----------------- */
+/*        NAV        */
+/* ----------------- */
 .nav-container {
   width: 100vw;
   background-color: #2274A5;
@@ -92,7 +106,6 @@ p, div {
   border: none;
   padding: 0;
   background-color: transparent;
-  margin-left: 10px;
 }
 .nav-container .btnNav .btnNavInner {
   height: 24px;
@@ -106,254 +119,108 @@ p, div {
   -webkit-filter: brightness(0);
   filter: brightness(0);
 }
-
-.userCardSmall {
-  width: 100%;
-}
-.userCardSmall .background {
-  height: 90px;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-.userCardSmall .user {
-  height: 70px;
-  background-color: #F4F4F4;
-  display: flex;
-}
-.userCardSmall .user .userImgWrapper {
+.nav-container .link-container {
   position: relative;
-  min-width: 70px;
-  height: 70px;
   margin-left: 10px;
 }
-.userCardSmall .user .userImg {
-  width: 70px;
-  height: 70px;
-  border: 2px solid #fff;
-  border-radius: 70px;
-  background-image: url("../assets/baddie.png");
-  background-size: cover;
-  background-position: 50% 50%;
+.nav-container .nav-dropdown {
   position: absolute;
-  top: -25px;
-}
-.userCardSmall .user .userInfo {
-  margin-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.userCardSmall .user .userInfo * {
-  margin: 0;
-}
-.userCardSmall .user .userInfo p {
-  color: #969596;
-  font-size: 0.9em;
-}
-
-.peopleCard {
-  background-color: #F4F4F4;
-  padding: 10px 20px;
-}
-.peopleCard p {
-  margin: 0;
-  font-size: 0.9em;
-}
-.peopleCard .person {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.peopleCard .personImg {
-  background-image: url("../assets/default-user.png");
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  height: 48px;
-  width: 48px;
-  border-radius: 48px;
-}
-.peopleCard .personInfo {
-  margin-left: 10px;
-}
-.peopleCard .personInfo button {
-  border: 1px solid #F66274;
-  border-radius: 20px;
-  color: #F66274;
-  font-size: 12px;
-  transition: all 0.1s ease;
-  padding: 2px 10px;
-  margin-top: 3px;
-}
-.peopleCard .personInfo button:hover {
-  background-color: #F66274;
-  color: #fff;
-}
-
-.createPost .grid {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  grid-column-gap: 10px;
-}
-.createPost .userImg {
-  width: 48px;
-  height: 48px;
-  border: 2px solid #fff;
-  border-radius: 48px;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-.createPost input {
-  height: 48px;
-  border: 1px solid transparent;
-  background: #F4F4F4;
-  border-radius: 5px;
-  padding: 10px;
-  transition: all 0.1s ease;
-}
-.createPost input:focus {
-  border-color: #2274A5;
+  right: 50%;
+  top: calc(100% + 6px);
+  z-index: 1;
   background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px 0px 5px 5px;
+  padding: 10px 20px 10px 20px;
+  display: none;
 }
-.createPost .btnMain {
-  border: 1px solid #2274A5;
-  border-radius: 20px;
+.nav-container .nav-dropdown:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  z-index: 10;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #fff;
+  border-left: 15px solid transparent;
+}
+.nav-container .nav-alert {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 13px;
+  min-width: 13px;
+  background-color: red;
+  border-radius: 7px;
+  z-index: 10;
   color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/* --------------------- */
+/*        BUTTONS        */
+/* --------------------- */
+.btnMain {
+  border-radius: 20px;
   font-size: 12px;
   transition: all 0.1s ease;
   padding: 2px 10px;
   margin-top: 3px;
+}
+
+.btnLarge {
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.1s ease;
+  padding: 4px 15px;
+  margin-top: 3px;
+}
+
+.btnBlue {
+  border: 1px solid #2274A5;
+  color: #fff;
   background-color: #2274A5;
 }
-.createPost .btnMain:hover {
+.btnBlue:hover {
   background-color: #fff;
   color: #2274A5;
 }
 
-.singlePost {
-  margin-top: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #D8D8D8;
+.btnBlueOutline {
+  border: 1px solid #2274A5;
+  color: #2274A5;
+  background-color: transparent;
 }
-.singlePost p {
-  margin: 0;
-}
-.singlePost .grid {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  grid-column-gap: 10px;
-}
-.singlePost .userImg {
-  width: 48px;
-  height: 48px;
-  border: 2px solid #fff;
-  border-radius: 48px;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-.singlePost .post-top {
-  display: flex;
-  margin-bottom: 5px;
-}
-.singlePost .post-top .dot {
-  height: 4px;
-  width: 4px;
-  background: #969596;
-  border-radius: 4px;
-  margin: 10px;
-}
-.singlePost .btnPost {
-  border: none;
-}
-.singlePost .btnLike:hover svg g {
-  stroke: #F66274;
-}
-.singlePost .btnComment:hover svg g {
-  stroke: #2274A5;
+.btnBlueOutline:hover {
+  background-color: #2274A5;
+  color: #fff;
 }
 
-.userInfoSide {
-  width: 100%;
-  margin-top: -120px;
+.btnRed {
+  border: 1px solid #F66274;
+  color: #fff;
+  background-color: #F66274;
 }
-.userInfoSide .user .userImgWrapper {
-  margin-left: 20px;
-}
-.userInfoSide .user .userImg {
-  width: 180px;
-  height: 180px;
-  border: 2px solid #fff;
-  border-radius: 180px;
-  background-image: url("../assets/baddie.png");
-  background-size: cover;
-  background-position: 50% 50%;
-  top: -25px;
-}
-.userInfoSide .user .userInfo * {
-  margin: 0;
+.btnRed:hover {
+  background-color: #fff;
+  color: #F66274;
 }
 
-.userCover .background {
-  height: 190px;
-  background-size: cover;
-  background-position: 50% 50%;
+.btnRedOutline {
+  border: 1px solid #F66274;
+  color: #F66274;
+  background-color: transparent;
 }
-
-.side-border {
-  position: relative;
-}
-.side-border:after {
-  content: "";
-  position: absolute;
-  height: calc(100% - 60px);
-  width: 1px;
-  background: #D8D8D8;
-  top: 30px;
-  bottom: 30px;
-  left: -15px;
-}
-
-body.login .login-background {
-  height: 100vh;
-  width: 100vw;
-  background-image: url("../assets/login-background.png");
-  background-size: cover;
-  background-position: 100% 50%;
-  background-repeat: no-repeat;
-  position: absolute;
-  z-index: -1;
-}
-body.login .login-container {
-  background: #fff;
-  border-radius: 5px;
-  padding: 50px 100px 100px;
-}
-body.login .bottom {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-body.login .bottom .icon {
-  background-position: 0% 50%;
-  background-repeat: no-repeat;
-  background-size: 20px;
-  padding-left: 30px;
-}
-body.login .bottom .icon.icon-find {
-  background-image: url("../assets/icon-search.png");
-}
-body.login .bottom .icon.icon-friends {
-  background-image: url("../assets/icon-friendRequests.png");
-}
-body.login .bottom .icon.icon-message {
-  background-image: url("../assets/icon-messages.png");
-}
-
-* {
-  outline: none !important;
-}
-
-.main {
-  margin-top: 30px;
+.btnRedOutline:hover {
+  background-color: #F66274;
+  color: #fff;
 }
 
 /*# sourceMappingURL=styles.css.map */

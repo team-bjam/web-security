@@ -3,20 +3,40 @@
         "name":"Baddie Winkle",
         "department":"Web Development",
         "coverImg":"../assets/cover.png",
-        "profileImg":"../assets/baddie.png"
+        "profileImg":"../assets/baddie.png",
+        "joinDate":"March 2019",
+        "location":"Copenhagen, Denmark",
+        "website":"www.baddie.wink",
+        "phone":"56 76 56 76"
     },
     "posts": [
         {
             "user":"User Name",
             "img":"../assets/default-user.png",
             "time":"March 17 at 10:28",
-            "post":"Post message tamari soy sauce. Läkerol salmiak choco chili. Teapigs up beat. No added sugar crunchy musli."
+            "post":"Post message tamari soy sauce. Läkerol salmiak choco chili. Teapigs up beat. No added sugar crunchy musli.",
+            "likes": 7,
+            "comments": [
+                {
+                    "user":"RuPaul",
+                    "userId":"3214321",
+                    "comment":"Good luck and don't fuck it up",
+                    "time":"March 17 at 11:20"
+                },
+                {
+                    "user":"Bianca Del Rio",
+                    "userId":"3214321",
+                    "comment":"Not today Satan, not today",
+                    "time":"March 17 at 16:08"
+                }
+            ]
         },
         {
             "user":"Angela Merkel",
             "img":"../assets/default-user.png",
             "time":"March 18 at 23:09",
-            "post":"Waffles with jam and cream."
+            "post":"Waffles with jam and cream.",
+            "likes": 1
         }
     ],
     "friends": [

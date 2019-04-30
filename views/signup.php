@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
+    <title>Sign up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/views/login.css">
@@ -19,9 +19,9 @@
         <div class="d-flex align-items-start justify-content-end">
             <div class="login-container col-12 col-sm-6">
                 <div class="d-flex align-items-center justify-content-end">
-                    <h2 class="tc-blue-dark mr-auto">Log in</h2>
+                    <h2 class="tc-blue-dark mr-auto">Sign up</h2>
                     <p class="tc-blue-dark mr-2">or</p>
-                    <a href="signup.php"><button class="btnMain btnBlueOutline">Sign up</button></a>
+                    <a href="login.php"><button class="btnMain btnBlueOutline">Log in</button></a>
                 </div>
                
                 <form action="">
@@ -29,10 +29,16 @@
                         <input type="text" placeholder="Email">
                     </div>
                     <div class="mt-3">
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="mt-3">
                         <input type="text" placeholder="Password">
                     </div>
+                    <div class="mt-3">
+                        <input type="text" placeholder="Confirm Password">
+                    </div>
                     <div class="d-flex justify-content-end mt-3">
-                        <button class="btnLarge btnBlue" type="button">Log in</button>
+                        <button class="btnLarge btnBlue" type="button">Sign up</button>
                     </div>
                 </form>
             </div>

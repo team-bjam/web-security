@@ -1,0 +1,303 @@
+@import '../variables';
+
+
+
+/* USER CARD */
+
+.userCard {
+    width: 100%;
+
+
+    .background {
+        height: 90px;
+        background-size: cover;
+        background-position: 50% 50%;   
+    }
+
+    $userImgWidth: 70px;
+
+    .user {
+        height: 70px;
+        background-color: $c-gray-light;
+        display: flex;
+        
+        
+        .userImgWrapper {
+            position: relative;
+            min-width: $userImgWidth;
+            height: $userImgWidth;
+            margin-left: 10px;
+        }
+
+        .userImg {
+            width: $userImgWidth;
+            height: $userImgWidth;
+            border: 2px solid #fff;
+            border-radius: $userImgWidth;
+            background-image: url('../assets/baddie.png');
+            background-size: cover;
+            background-position: 50% 50%;
+            position: absolute;
+            top: -25px;
+            // left: 10px;
+        }
+
+        .userInfo {
+            * {
+                margin: 0;
+            }
+            margin-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            p {
+                color: $c-text-light;
+                font-size: 0.9em;
+            }
+        }
+    }
+}
+// @import '../variables';
+
+// .userCardSmall {
+//     width: 100%;
+
+
+//     .background {
+//         height: 90px;
+        
+//         // background: pink;
+
+//         // background-image: url('../assets/cover.png');
+//         background-size: cover;
+//         background-position: 50% 50%;
+        
+//     }
+
+//     $userImgWidth: 70px;
+
+//     .user {
+//         height: 70px;
+//         background-color: $c-gray-light;
+//         display: flex;
+        
+        
+//         .userImgWrapper {
+//             position: relative;
+//             // height: 100%;
+//             min-width: $userImgWidth;
+//             height: $userImgWidth;
+//             margin-left: 10px;
+//             // display: inline-block;
+//         }
+
+//         .userImg {
+//             width: $userImgWidth;
+//             height: $userImgWidth;
+//             border: 2px solid #fff;
+//             border-radius: $userImgWidth;
+//             background-image: url('../assets/baddie.png');
+//             background-size: cover;
+//             background-position: 50% 50%;
+//             position: absolute;
+//             top: -25px;
+//             // left: 10px;
+//         }
+
+//         .userInfo {
+//             * {
+//                 margin: 0;
+//             }
+//             margin-left: 10px;
+//             padding-top: 10px;
+//             padding-bottom: 10px;
+
+//             p {
+//                 color: $c-text-light;
+//                 font-size: 0.9em;
+//             }
+//         }
+//     }
+// }
+
+
+/* PEOPLE YOU MAY KNOW */
+
+// @import '../variables';
+
+.peopleCard {
+    background-color: $c-gray-light;
+    padding: 10px 20px;
+
+    p {
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .person {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .personImg {
+        background-image: url('../../assets/default-user.png');
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+
+        height: 48px;
+        width: 48px;
+        border-radius: 48px;
+    }
+
+    .personInfo {
+        margin-left: 10px;
+    }
+}
+
+
+/* CREATE POST */
+
+$userImgWidth: 48px;
+
+.createPost {
+
+    .grid {
+        display: grid;
+        grid-template-columns: $userImgWidth 1fr;
+        grid-column-gap: 10px;
+    }
+
+    .userImg {
+        width: $userImgWidth;
+        height: $userImgWidth;
+        border: 2px solid #fff;
+        border-radius: $userImgWidth;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    input {
+        height: $userImgWidth;
+        border: 1px solid transparent;
+        background: $c-gray-light;
+        border-radius: 5px;
+        padding: 10px;
+        transition: all 0.1s ease;
+
+        &:focus {
+            border-color: $c-blue-main;
+            background-color: #fff;
+        }
+    }
+
+
+    .buttons {
+        display: none;
+    }
+}
+
+/* SINGLE POST */
+
+.singlePost {
+
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $c-gray-medium;
+    
+    p {
+        margin: 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: $userImgWidth 1fr;
+        grid-column-gap: 10px;
+    }
+
+    .userImg {
+        width: $userImgWidth;
+        height: $userImgWidth;
+        border: 2px solid #fff;
+        border-radius: $userImgWidth;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .post-top {
+        display: flex;
+        margin-bottom: 5px;
+
+        .dot {
+            height: 4px;
+            width: 4px;
+            background: $c-text-light;
+            border-radius: 4px;
+            margin: 10px;
+        }
+        
+    }
+
+    .btnPost {
+        border: none;
+    }
+
+    .btnLike {
+        &:hover {
+            svg g {
+                stroke: $c-red;
+            }
+        }
+
+        &.liked {
+            svg g {
+                stroke: $c-red;
+                fill: $c-red;
+            }
+        }
+    }
+
+    .btnComment {
+        &:hover {
+            svg g {
+                stroke: $c-blue-main;
+            }
+        }
+    }
+
+    .likesCount,
+    .commentsCount {
+        display: inline-block;
+        width: 30px;
+    }
+}
+
+/* COMMENTS */
+
+.commentContainer {
+    background-color: $c-blue-light;
+    margin-left: 58px;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    
+    .comment {
+        padding-bottom: 10px;
+    }
+
+    .txtComment {
+        border: 1px solid $c-white;
+        border-radius: 5px;
+        padding: 10px;
+
+        &:focus {
+            border-color: $c-blue-main;
+            background-color: #fff;
+        }
+    }
+
+    .buttons {
+        display: none;
+    }
+}

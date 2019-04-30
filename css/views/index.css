@@ -1,0 +1,178 @@
+/* USER CARD */
+.userCard {
+  width: 100%;
+}
+.userCard .background {
+  height: 90px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.userCard .user {
+  height: 70px;
+  background-color: #F4F4F4;
+  display: flex;
+}
+.userCard .user .userImgWrapper {
+  position: relative;
+  min-width: 70px;
+  height: 70px;
+  margin-left: 10px;
+}
+.userCard .user .userImg {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #fff;
+  border-radius: 70px;
+  background-image: url("../assets/baddie.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  position: absolute;
+  top: -25px;
+}
+.userCard .user .userInfo {
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.userCard .user .userInfo * {
+  margin: 0;
+}
+.userCard .user .userInfo p {
+  color: #969596;
+  font-size: 0.9em;
+}
+
+/* PEOPLE YOU MAY KNOW */
+.peopleCard {
+  background-color: #F4F4F4;
+  padding: 10px 20px;
+}
+.peopleCard p {
+  margin: 0;
+  font-size: 0.9em;
+}
+.peopleCard .person {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.peopleCard .personImg {
+  background-image: url("../../assets/default-user.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 48px;
+  width: 48px;
+  border-radius: 48px;
+}
+.peopleCard .personInfo {
+  margin-left: 10px;
+}
+
+/* CREATE POST */
+.createPost .grid {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-column-gap: 10px;
+}
+.createPost .userImg {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 48px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.createPost input {
+  height: 48px;
+  border: 1px solid transparent;
+  background: #F4F4F4;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.1s ease;
+}
+.createPost input:focus {
+  border-color: #2274A5;
+  background-color: #fff;
+}
+.createPost .buttons {
+  display: none;
+}
+
+/* SINGLE POST */
+.singlePost {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D8D8D8;
+}
+.singlePost p {
+  margin: 0;
+}
+.singlePost .grid {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-column-gap: 10px;
+}
+.singlePost .userImg {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 48px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.singlePost .post-top {
+  display: flex;
+  margin-bottom: 5px;
+}
+.singlePost .post-top .dot {
+  height: 4px;
+  width: 4px;
+  background: #969596;
+  border-radius: 4px;
+  margin: 10px;
+}
+.singlePost .btnPost {
+  border: none;
+}
+.singlePost .btnLike:hover svg g {
+  stroke: #F66274;
+}
+.singlePost .btnLike.liked svg g {
+  stroke: #F66274;
+  fill: #F66274;
+}
+.singlePost .btnComment:hover svg g {
+  stroke: #2274A5;
+}
+.singlePost .likesCount,
+.singlePost .commentsCount {
+  display: inline-block;
+  width: 30px;
+}
+
+/* COMMENTS */
+.commentContainer {
+  background-color: #F4F8FB;
+  margin-left: 58px;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 5px;
+}
+.commentContainer .comment {
+  padding-bottom: 10px;
+}
+.commentContainer .txtComment {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.commentContainer .txtComment:focus {
+  border-color: #2274A5;
+  background-color: #fff;
+}
+.commentContainer .buttons {
+  display: none;
+}
+
+/*# sourceMappingURL=index.css.map */

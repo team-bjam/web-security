@@ -3,78 +3,51 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/styles.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/views/index.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/views/profile.css">
 </head>
 <body>
     <?php include_once '../components/nav.php' ?>
     <div class="container main">
         <div class="row">
-            <div class="col-sm-12 col-md-5 col-lg-4">
-
+            <div class="col-12">
+                
                 <?php
                     $data = file_get_contents('../data.txt');
                     $data = json_decode($data);
                     $user = $data->user;
                 ?>
 
-                <div class="userCard">
+                <div class="userCover">
                     <div class="background" style="background-image: url('<?php echo $user->coverImg ?>')"></div>
-                    <div class="user">
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="profile-side">
+                    <div class="user pr-3">
                         <div class="userImgWrapper">
                             <div class="userImg" style="background-image: url('<?php echo $user->profileImg ?>')"></div>
                         </div>
-                        <div class="userInfo">
+                        <div class="mt-4">
                             <h3><?php echo $user->name ?></h3>
-                            <p class="fw-light"><?php echo $user->department ?></p>
+                            <p class="fw-light mt-2"><?php echo $user->department ?></p>
+                            <p class="fw-light mt-2"><?php echo $user->joinDate ?></p>
                         </div>
                     </div>
-                </div>
-
-                <div class="mt-3">
-
-                    <div class="peopleCard">
-                    <p class="tc-light mb-2">People you may know</p>
-
-                    <div class="person mb-3">
-                        <div class="personImg"></div>
-                        <div class="personInfo">
-                            <a href="views/not-profile.php" class="fw-semibold d-block">Donald Trump</a>
-                            <button class="btnMain btnRedOutline">Add friend</button>
-                        </div>
-                    </div>
-
-                    <div class="person mb-3">
-                        <div class="personImg"></div>
-                        <div class="personInfo">
-                            <a href="views/not-profile.php" class="fw-semibold d-block">Pamela Anderson</a>
-                            <button class="btnMain btnRedOutline">Add friend</button>
-                        </div>
-                    </div>
-
-                    <div class="person mb-3">
-                        <div class="personImg"></div>
-                        <div class="personInfo">
-                            <a href="views/not-profile.php" class="fw-semibold d-block">Mr. Bean</a>
-                            <button class="btnMain btnRedOutline">Add friend</button>
-                        </div>
-                    </div>
-                </div>
-
                 </div>
             </div>
-            <div class="col-sm-12 col-md-7 col-lg-8">
-
+            <div class="col-sm-12 col-md-8 col-lg-9 mt-3 side-border">
                 <div class="createPost">
                     <div class="grid">
                         <div></div>
-                        <div class="fw-semibold">Create post</div>
+                        <div class="fw-semibold">Write post</div>
                     </div>
                     <div class="grid mt-2">
                         <div class="userImg" style="background-image: url('<?php echo $user->profileImg ?>')"></div>
-                        <input id="txtPost" type="text" placeholder="What's on your mind?">
+                        <input id="txtPost" type="text" placeholder="Share something with <?php echo $user->name?>">
                     </div>
                     <div class="buttons">
                         <div class="d-flex align-items-center justify-content-end mt-2">
@@ -83,11 +56,11 @@
                         </div>
                     </div>
                 </div>
-
                 <br>
-
                 <div class="postsContainer">
-                <?php
+                    
+                    <?php
+
                     $posts = $data->posts;
                     
                     function getPost($post, $user) {
@@ -154,8 +127,10 @@
                     foreach ($posts as $key => $post) {
                         $post->commentCount = !empty($post->comments) ? count($post->comments) : '';
                         $comments = $post->comments;
+
                         $post->commentsHtml = '';
 
+                        // function getPost($comment) {
                         foreach ($post->comments as $key => $comment) {
                             $post->commentsHtml = $post->commentsHtml . '
                                 <div class="grid comment">
@@ -174,13 +149,14 @@
                         }
                         
                         getPost($post, $user);
+
                     }
-                ?>
+                    ?>
                 </div>
+            </div>
             </div>
         </div>
     </div>
-
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src='main.js'></script>
 </body>

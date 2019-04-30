@@ -1,7 +1,17 @@
-body.login .login-background {
+body.login {
   height: 100vh;
   width: 100vw;
-  background-image: url("../assets/login-background.png");
+}
+body.login .main {
+  margin-top: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+}
+body.login .login-background {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../assets/login-background.png");
   background-size: cover;
   background-position: 100% 50%;
   background-repeat: no-repeat;
@@ -12,6 +22,14 @@ body.login .login-container {
   background: #fff;
   border-radius: 5px;
   padding: 50px 100px 100px;
+  margin-top: 10%;
+}
+body.login .login-container input {
+  width: 100%;
+  padding: 10px;
+  height: 40px;
+  border: 1px solid #2274A5;
+  border-radius: 5px;
 }
 body.login .bottom {
   width: 100%;
@@ -25,13 +43,13 @@ body.login .bottom .icon {
   padding-left: 30px;
 }
 body.login .bottom .icon.icon-find {
-  background-image: url("../assets/icon-search.png");
+  background-image: url("../../assets/icon-search.png");
 }
 body.login .bottom .icon.icon-friends {
-  background-image: url("../assets/icon-friendRequests.png");
+  background-image: url("../../assets/icon-friendRequests.png");
 }
 body.login .bottom .icon.icon-message {
-  background-image: url("../assets/icon-messages.png");
+  background-image: url("../../assets/icon-messages.png");
 }
 
 /*# sourceMappingURL=login.css.map */
