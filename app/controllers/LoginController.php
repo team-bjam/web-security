@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Core\{App, Validator};
+use App\Core\{App, Validator, Session};
 use App\Models\User;
 
 class LoginController
@@ -11,7 +11,12 @@ class LoginController
     public function __construct() 
     {
         $this->middleware = [
-            'Guest'
+            'Guest',
+            'LoginLockout'  => [
+                'only'  => [
+                    'store'
+                ]
+            ]
         ];
     }
     /**
@@ -26,7 +31,7 @@ class LoginController
      * Log user in the system.
      */
     public function store()
-    {
+    {    
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -58,6 +63,8 @@ class LoginController
         
         //no user with email found
         if(count($users) == 0){
+            $this->recordLoginAttempt();
+
             return redirect('login', [
                 'status'    => 'Email and/or password was not correct'
             ]);
@@ -67,6 +74,8 @@ class LoginController
 
         //incorrect passwrod
         if ($user->verifyPassword($password) === false) {
+            $this->recordLoginAttempt();
+
             return redirect('login', [
                 'status'    => 'Email and/or password was not correct'
             ]);
@@ -77,6 +86,12 @@ class LoginController
         return redirect('dashboard', [
             'status' => 'Welcome, '.$user->first_name
         ]);
+    }
+
+    private function recordLoginAttempt()
+    {    
+        Session::put('login_attempts', Session::get('login_attempts') + 1 ?? 1);
+        Session::put('last_login_attempt', time());
     }
 
 }

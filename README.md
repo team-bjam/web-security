@@ -1,3 +1,4 @@
+@@ -0,0 +1,74 @@
 # How to do things?
 
 ## Set up the project locally
@@ -9,6 +10,8 @@
 * Copy `example.config.php` and rename the copy to `config.php`. _Do not commit this file to the repository!_
 * Open `config.php` and fill out the blanks:
 * "rootUrl" is whatever you type in the browser to access the project, for example `localhost/security`
+* Open `phinx.yml` and fill out the information for development server
+* Run `vendor/bin/phinx migrate -e development` to migrate the database tables
 * Finally, you need to set up the database and tables in it.
 
 ## Creating a new feature
@@ -43,6 +46,11 @@ auth()->check();
 auth()->user;
 ```
 
+## Migrations
+Migrations are a simple and effective way to set up and make changes to your database and have that change shared among all developers.
+
+See documentation on how to create table migrations here: http://docs.phinx.org/en/latest/migrations.html
+
 ## Query builder
 To access the database, we use a query builder i.e. right now it has just a few methods, but the idea is to expand it as needed in the project.
 
@@ -64,4 +72,3 @@ This means that the user must logged in to acces any routees in this controller.
 
 ### Global middleware
 Coming soon
-
