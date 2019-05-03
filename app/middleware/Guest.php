@@ -10,7 +10,9 @@ class Guest {
     public function handle()
     {
         if (App::get('auth')->check()) {
-            return redirect('dashboard');
+            redirect('dashboard');
+
+            return false;
         }
 
         return true;

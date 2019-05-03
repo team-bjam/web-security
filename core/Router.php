@@ -78,31 +78,65 @@ class Router
         $controller = "App\\Controllers\\{$controller}";
         $controller = new $controller;
 
-
-        $this->applyMiddleware($controller);
-
-        if (! method_exists($controller, $action)) {
-            throw new Exception(
-                "{$controller} does not respond to the {$action} action."
-            );
+        //only call the method in the controller, if all the middleware
+        //as defined in the controller pass for the given method
+        if($this->applyMiddleware($controller, $action) === true) {
+            if (! method_exists($controller, $action)) {
+                throw new Exception(
+                    "{$controller} does not respond to the {$action} action."
+                );
+            }
+    
+            return $controller->$action();
         }
 
-        return $controller->$action();
+        
     }
 
     /**
      * Apply route middleware on the provided controller
      * @param $controller
      */
-    protected function ApplyMiddleware($controller)
-    {
+    protected function ApplyMiddleware($controller, $action)
+    {   
+        //in the beginning we think assume that the middleware passes
+        //because we only care if it does not
+        $middleware_passes = true;
+
+        //check if the controller has any applied middleware, you can 
+        //see the applied middleware in the __construct method
+        //of the controller
         if (isset($controller->middleware)) {
-            
-            foreach($controller->middleware as $middleware) {
-                $middleware = "App\\Middleware\\{$middleware}";
-                $middleware = new $middleware;
-                $middleware->handle();
+
+            foreach($controller->middleware as $middleware_name => $middleware) {
+                
+                //if middleware is an array, then it means that it is being applied only
+                //to some methods in the controller
+                if(is_array($middleware)) {
+                    //here the middleware has a set of methods in the controller that it applies to
+                    //so we try to figure ouf if it is the method that we are calling
+                    if(array_keys($middleware)[0] === 'only' && in_array($action, $middleware['only'])) {
+
+                        //apply the middleware
+                        $middleware = "App\\Middleware\\{$middleware_name}";
+                        $middleware = new $middleware;
+
+                        //if the middleware fails, we make a note of that, so that the router
+                        //knows not to call the method in the controller
+                        if ($middleware->handle() === false) {
+                            $middleware_passes = false;
+                        }
+                    }
+                } else {
+                    $middleware = "App\\Middleware\\{$middleware}";
+                    $middleware = new $middleware;
+                    if ($middleware->handle() === false) {
+                        $middleware_passes = false;
+                    }
+                }
             }
         }
+
+        return $middleware_passes;
     }
 }
