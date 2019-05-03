@@ -83,15 +83,17 @@
   background-size: cover;
   background-position: 50% 50%;
 }
-.createPost input {
+.createPost textarea {
   height: 48px;
+  min-height: 48px;
+  max-height: 500px;
   border: 1px solid transparent;
   background: #F4F4F4;
   border-radius: 5px;
-  padding: 10px;
+  padding: 13px 10px;
   transition: all 0.1s ease;
 }
-.createPost input:focus {
+.createPost textarea:focus {
   border-color: #2274A5;
   background-color: #fff;
 }
@@ -165,7 +167,10 @@
 .commentContainer .txtComment {
   border: 1px solid #fff;
   border-radius: 5px;
-  padding: 10px;
+  padding: 13px 10px;
+  height: 48px;
+  min-height: 48px;
+  max-height: 200px;
 }
 .commentContainer .txtComment:focus {
   border-color: #2274A5;

@@ -74,7 +74,7 @@
                     </div>
                     <div class="grid mt-2">
                         <div class="userImg" style="background-image: url('<?php echo $user->profileImg ?>')"></div>
-                        <input id="txtPost" type="text" placeholder="What's on your mind?">
+                        <textarea id="txtPost" type="text" placeholder="What's on your mind?"></textarea>
                     </div>
                     <div class="buttons">
                         <div class="d-flex align-items-center justify-content-end mt-2">
@@ -138,7 +138,7 @@
                                 </div>
                                 <div class="grid commentInput">
                                     <div class="userImg" style="background-image: url('.$user->profileImg.')"></div>
-                                    <input class="txtComment" type="text" placeholder="Comment on this post">
+                                    <textarea class="txtComment" type="text" placeholder="Comment on this post"></textarea>
                                 </div>
                                 <div class="buttons">
                                     <div class="d-flex align-items-center justify-content-end mt-2">

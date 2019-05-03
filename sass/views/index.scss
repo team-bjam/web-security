@@ -7,7 +7,6 @@
 .userCard {
     width: 100%;
 
-
     .background {
         height: 90px;
         background-size: cover;
@@ -20,8 +19,7 @@
         height: 70px;
         background-color: $c-gray-light;
         display: flex;
-        
-        
+         
         .userImgWrapper {
             position: relative;
             min-width: $userImgWidth;
@@ -39,7 +37,6 @@
             background-position: 50% 50%;
             position: absolute;
             top: -25px;
-            // left: 10px;
         }
 
         .userInfo {
@@ -57,73 +54,9 @@
         }
     }
 }
-// @import '../variables';
-
-// .userCardSmall {
-//     width: 100%;
-
-
-//     .background {
-//         height: 90px;
-        
-//         // background: pink;
-
-//         // background-image: url('../assets/cover.png');
-//         background-size: cover;
-//         background-position: 50% 50%;
-        
-//     }
-
-//     $userImgWidth: 70px;
-
-//     .user {
-//         height: 70px;
-//         background-color: $c-gray-light;
-//         display: flex;
-        
-        
-//         .userImgWrapper {
-//             position: relative;
-//             // height: 100%;
-//             min-width: $userImgWidth;
-//             height: $userImgWidth;
-//             margin-left: 10px;
-//             // display: inline-block;
-//         }
-
-//         .userImg {
-//             width: $userImgWidth;
-//             height: $userImgWidth;
-//             border: 2px solid #fff;
-//             border-radius: $userImgWidth;
-//             background-image: url('../assets/baddie.png');
-//             background-size: cover;
-//             background-position: 50% 50%;
-//             position: absolute;
-//             top: -25px;
-//             // left: 10px;
-//         }
-
-//         .userInfo {
-//             * {
-//                 margin: 0;
-//             }
-//             margin-left: 10px;
-//             padding-top: 10px;
-//             padding-bottom: 10px;
-
-//             p {
-//                 color: $c-text-light;
-//                 font-size: 0.9em;
-//             }
-//         }
-//     }
-// }
 
 
 /* PEOPLE YOU MAY KNOW */
-
-// @import '../variables';
 
 .peopleCard {
     background-color: $c-gray-light;
@@ -178,12 +111,14 @@ $userImgWidth: 48px;
         background-position: 50% 50%;
     }
 
-    input {
+    textarea {
         height: $userImgWidth;
+        min-height: $userImgWidth;
+        max-height: 500px;
         border: 1px solid transparent;
         background: $c-gray-light;
         border-radius: 5px;
-        padding: 10px;
+        padding: 13px 10px;
         transition: all 0.1s ease;
 
         &:focus {
@@ -191,7 +126,6 @@ $userImgWidth: 48px;
             background-color: #fff;
         }
     }
-
 
     .buttons {
         display: none;
@@ -289,7 +223,10 @@ $userImgWidth: 48px;
     .txtComment {
         border: 1px solid $c-white;
         border-radius: 5px;
-        padding: 10px;
+        padding: 13px 10px;
+        height: $userImgWidth;
+        min-height: $userImgWidth;
+        max-height: 200px;
 
         &:focus {
             border-color: $c-blue-main;

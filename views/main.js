@@ -37,6 +37,7 @@ $(document).on('blur','#txtPost',function(){
 // cancel post
 $(document).on('click','#btnPostCancel',function(){
     $('#txtPost').val('')
+    $('#txtPost').blur()
     $('.createPost .buttons').fadeOut('fast')
 })
 
@@ -177,9 +178,49 @@ $(document).on('click','.btnLike',function(){
         counter.text(count + 1)
     }
 })
-    
-    
 
-    
 
-    
+/* --------------------------- */
+/*      ELASTIC TEXTAREAS      */
+/* --------------------------- */
+
+function autoExpand(target) {
+    if ($(target).val() !== '') {
+        var height = target.scrollHeight
+        target.style.height = height + 'px';    
+    } else {
+        target.style.height = 0 + 'px';    
+    }
+
+};
+
+// FOR POST
+
+$(document).on('keyup','#txtPost',function(e){
+    e.target.style.height = 'inherit';
+    autoExpand(e.target)
+})
+
+$(document).on('focus','#txtPost',function(e){
+    e.target.style.height = 'inherit';
+    autoExpand(e.target)
+})
+
+$(document).on('blur','#txtPost',function(e){
+    e.target.style.height = 'inherit';
+    autoExpand(e.target)
+})
+
+// FOR COMMENTS
+
+$(document).on('keyup','.txtComment',function(e){
+    autoExpand(e.target)
+})
+
+$(document).on('focus','.txtComment',function(e){
+    autoExpand(e.target)
+})
+
+$(document).on('blur','.txtComment',function(e){
+    autoExpand(e.target)
+})
