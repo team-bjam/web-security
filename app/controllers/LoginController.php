@@ -34,7 +34,7 @@ class LoginController
     {    
         $email = $_POST['email'];
         $password = $_POST['password'];
-
+        
         $validator = new Validator([
             'email'    => [
                 'value' => $email,
@@ -90,7 +90,7 @@ class LoginController
 
     private function recordLoginAttempt()
     {    
-        Session::put('login_attempts', Session::get('login_attempts') + 1 ?? 1);
+        Session::put('login_attempts', Session::has('login_attempts') ? Session::get('login_attempts') + 1 : 1);
         Session::put('last_login_attempt', time());
     }
 
